@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e12">
+  <meta name="description" content="Follow Cristiano Ronaldo's road to 1,000 goals with live match events, score updates and a career milestone counter.">
+  <title>CR7 TRACKER — The Road to 1,000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="CR7 Tracker home"><span class="brand-symbol">7</span><span>CR7<span class="brand-thin">TRACKER</span></span></a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#match-center">Matches</a>
+      <a href="#goal-log">Goal log</a>
+    </nav>
+    <div class="header-actions">
+      <span class="connection-badge" id="connectionBadge"><span class="badge-dot"></span><span id="connectionText">CHECKING</span></span>
+      <button type="button" id="notificationsBtn" class="icon-button" aria-label="Turn on goal notifications" title="Enable browser goal notifications">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="overview" class="hero page-wrap" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE UNSTOPPABLE NO. 7 <span class="eyebrow-rule">/</span> GOAL TRACKER</div>
+        <h1 id="heroTitle">THE ROAD<br><span>TO 1,000.</span></h1>
+        <p class="hero-description">Every goal brings history closer. Track Cristiano Ronaldo's pursuit of football's ultimate scoring milestone.</p>
+        <div class="hero-inline">
+          <span class="little-ball" aria-hidden="true">⚽</span>
+          <span>CRISTIANO RONALDO</span><span class="mini-divider"></span><span>AL NASSR / PORTUGAL</span>
+        </div>
+        <div class="hero-buttons"><a class="primary-btn" href="#goal-log">EXPLORE GOALS <span>↗</span></a><button class="secondary-btn" type="button" id="refreshBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-5L4 8m0-5v5h5M4 13a8 8 0 0 0 14 5l2-2m0 5v-5h-5"/></svg> REFRESH</button></div>
+      </div>
+      <div class="hero-art" aria-label="Cristiano Ronaldo themed illustration">
+        <div class="halo halo-outer"></div><div class="halo halo-inner"></div>
+        <span class="big-seven" aria-hidden="true">7</span>
+        <img class="player-photo" src="https://media.api-sports.io/football/players/874.png" alt="Cristiano Ronaldo player headshot" onerror="this.classList.add('image-unavailable')">
+        <div class="player-nameplate"><strong>CRISTIANO</strong><strong>RONALDO</strong><span>THE GREATEST IS STILL WRITING HISTORY.</span></div>
+        <span class="art-corner art-corner-left">CR7 / 2026</span><span class="art-corner art-corner-right">EST. 1985</span>
+      </div>
+    </section>
+
+    <div class="ticker-bar" aria-hidden="true"><div class="ticker-text">SIUUU! <b>✦</b> NEVER STOP SCORING <b>✦</b> THE ROAD TO 1,000 <b>✦</b> SIUUU! <b>✦</b> NEVER STOP SCORING <b>✦</b> THE ROAD TO 1,000 <b>✦</b></div></div>
+
+    <section class="stats page-wrap" aria-label="Ronaldo goal statistics">
+      <article class="stat-tile stat-main"><div class="stat-top"><span>OFFICIAL CAREER GOALS</span><span class="stat-mini-icon">↗</span></div><div id="careerGoals" class="stat-number">985</div><div class="stat-caption">Club + Portugal <span id="goalSourceTag" class="mini-tag">SNAPSHOT</span></div></article>
+      <article class="stat-tile"><div class="stat-top"><span>GOALS TO 1,000</span><span class="stat-mini-icon">◎</span></div><div id="goalsRemaining" class="stat-number">15</div><div class="stat-caption">The final countdown</div></article>
+      <article class="stat-tile"><div class="stat-top"><span>2026/27 CLUB GOALS</span><span class="stat-mini-icon">⚡</span></div><div id="clubGoals" class="stat-number">9</div><div class="stat-caption">Al Nassr · all competitions</div></article>
+      <article class="stat-tile"><div class="stat-top"><span>GOALS IN 2026</span><span class="stat-mini-icon">◈</span></div><div id="yearGoals" class="stat-number">28</div><div class="stat-caption">Calendar year · club + country</div></article>
+    </section>
+
+    <section class="progress-section page-wrap" aria-label="Progress toward 1000 goals">
+      <div class="section-heading"><div><p class="section-kicker">CHASING IMMORTALITY</p><h2>THE MILESTONE<span>.</span></h2></div><div class="section-counter">01 <span>/ 03</span></div></div>
+      <div class="milestone-panel">
+        <div class="milestone-ring" id="milestoneRing" style="--pct:98.5"><div class="ring-core"><span class="ring-eyebrow">PROGRESS</span><strong id="progressPercent">98.5%</strong><span class="ring-small">COMPLETE</span></div></div>
+        <div class="milestone-text"><div class="milestone-label"><span class="flicker-dot"></span> THE ULTIMATE TARGET</div><div class="goal-1000">1,000<span>.</span></div><p>One of the greatest goalscorers in history. Every strike gets Ronaldo closer to the extraordinary four-digit club.</p><div class="milestone-meta"><span><b id="milestoneCurrent">985</b> SCORED</span><span><b id="milestoneLeft">15</b> TO GO</span></div></div>
+        <div class="milestone-decoration" aria-hidden="true">1000</div>
+      </div>
+    </section>
+
+    <section class="matches-section page-wrap" id="match-center">
+      <div class="section-heading"><div><p class="section-kicker">ON THE PITCH</p><h2>MATCH CENTER<span>.</span></h2></div><span class="sync-note" id="lastUpdated">Data status loading…</span></div>
+      <div id="matchesContainer" class="matches-grid" aria-live="polite"><div class="empty-panel"><div class="empty-icon">◷</div><strong>Checking match schedule</strong><span>Match information will appear here when the football feed responds.</span></div></div>
+    </section>
+
+    <section class="goal-section page-wrap" id="goal-log">
+      <div class="section-heading"><div><p class="section-kicker">THE FINISHING TOUCH</p><h2>GOAL CHRONICLES<span>.</span></h2></div><div class="section-counter">02 <span>/ 03</span></div></div>
+      <div class="goal-log-toolbar"><p>Latest scoring moments, from match events and verified historical examples.</p><div class="filters" aria-label="Filter goal log"><button type="button" class="filter-pill selected" data-filter="all" aria-pressed="true">ALL GOALS</button><button type="button" class="filter-pill" data-filter="club" aria-pressed="false">AL NASSR</button><button type="button" class="filter-pill" data-filter="national" aria-pressed="false">PORTUGAL</button></div></div>
+      <div id="goalsContainer" class="goals-grid" aria-live="polite"><div class="empty-panel">Loading goals…</div></div>
+      <div class="log-footnote" id="logFootnote">The historical cards are selected examples, not a complete archive.</div>
+    </section>
+
+    <section class="about-section page-wrap">
+      <div class="about-left"><span class="section-kicker">BUILT FOR THE MOMENT</span><h2>DON'T MISS<br><em>THE NEXT SIUUU.</em></h2></div>
+      <div class="about-right"><p>This site starts from a dated, verified career-goal total and checks supported Al Nassr and Portugal matches for new Ronaldo goal events. Keep the website open to receive browser notifications when a new goal appears.</p><button type="button" class="primary-btn notify-cta" id="notifyCta">ENABLE GOAL ALERTS <span>↗</span></button><p class="fine-print">Browser alerts require your permission and an open tab. For notifications on other devices or when the website is closed, a separate push service is needed.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="page-wrap footer-inner"><div><a class="brand" href="#top"><span class="brand-symbol">7</span><span>CR7<span class="brand-thin">TRACKER</span></span></a><p>An independent fan-made project. Not affiliated with Cristiano Ronaldo, Al Nassr, the Portugal national team, or API-Football.</p></div><div class="footer-right"><span>DATA: <a href="https://www.api-football.com/" rel="noopener" target="_blank">API-FOOTBALL ↗</a></span><span>SNAPSHOT: <a href="https://www.ronaldostats.app/" rel="noopener" target="_blank">RONALDO STATS ↗</a></span><small>© <span id="copyrightYear">2026</span> CR7 TRACKER</small></div></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
